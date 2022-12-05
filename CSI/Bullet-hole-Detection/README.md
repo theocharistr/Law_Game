@@ -24,8 +24,12 @@ Thus we have the azimuth angle and we define the elevation angle based the rotat
 
 ![alt text](https://github.com/theocharistr/Bullet-hole-Detection/blob/master/BulletDetection1image/Detected_bullet%20hole%20car%20198.jpg)
 
-Another example for
+Two more examples for
+
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/25.png)
+
 ![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/Detected_25.jpg)
+
 ![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/65.png)
+
 ![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/Detected_65.jpg)
