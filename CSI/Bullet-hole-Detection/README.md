@@ -33,3 +33,5 @@ Two more examples for
 ![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/65.png)
 
 ![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/Detected_65.jpg)
+
+If we have more than one bullet hole, there are saved as a list in the Json file, with their corresponding contour detection.
