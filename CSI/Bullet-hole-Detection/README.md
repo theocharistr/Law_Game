@@ -1,4 +1,8 @@
 # Bullet-hole-Detection
+BulletDetection1image/Detectortest.py use it, while having as input one image and the JSON file for the mask of the bullethole
+BulletDetection1image/DetectortestwithouJSON.py use it, while having as input one image and without JSON file for the mask of the bullethole
+BulletDetectionAllimages/DetectortestAll.py use it while having all images and all their respective JSON files
+
 ![alt text]( https://github.com/theocharistr/Bullet-hole-Detection/blob/master/BulletDetection1image/bullet%20hole%20car%20198.png)
 
 
@@ -19,3 +23,9 @@ This way we define the directionality of the bullet which we save in Json file
 Thus we have the azimuth angle and we define the elevation angle based the rotation and the directionality of the bullet, and we can create a surface vector to locate potential position of the shooter 
 
 ![alt text](https://github.com/theocharistr/Bullet-hole-Detection/blob/master/BulletDetection1image/Detected_bullet%20hole%20car%20198.jpg)
+
+Another example for
+![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/25.png)
+![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/Detected_25.jpg)
+![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/65.png)
+![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/Detected_65.jpg)
