@@ -19,6 +19,8 @@ When we go in play mode, we can move the cursor around and see the possible traj
 
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/Csi.gif)
 
+For the implementation we followed the tutorial https://www.youtube.com/watch?v=6mJMmF5sLxk&t=472s&ab_channel=RomiFauzi, some of the major changes removed gravity from the bullet and changed the equation as we wish the trajectory to be a straight and not a curved line, based on LEA's decision.
+
 # Backward Scenario
 The purpose of the backward scenario is to locate the possible position of the shooter based on bullet hole image(s)and/or cartridges on the scene.
 We add the images of  ground truth of 65 azimuth angle 
