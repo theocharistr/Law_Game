@@ -9,7 +9,7 @@ and
 
 ![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/25.png)
 
-and select the images as 2D Sprite in Unity assets and we can insert them inside the crime scene. We set the SurfaceVector.cs script on our primary bullethole, meaning the one bullet hole that will definitely exist on our scene and the Info.cs in case we have an Extra bullet hole in the scene. On the inspector for the primary bullet, the following information will be required after we attach the script to the object
+and select the images as 2D Sprite in Unity assets and we can insert them inside the crime scene. We set the *SurfaceVector.cs* script on our primary bullethole, meaning the one bullet hole that will definitely exist on our scene and the *Info.cs* in case we have an Extra bullet hole in the scene. On the inspector for the primary bullet, the following information will be required after we attach the script to the object
 
 ![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/65_inspector.jpg)
 
@@ -21,8 +21,8 @@ We can see if the surface vectors of the bullet holes intersect in the scene and
 
 ![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/CrimeSceneCones.jpg)
 
-If we have a second (extra) bullet hole, we have attached the Info.cs script, we similarly include azimuth angle, rotation and directionality  these information is extracted from the JSON file, after we have applied the bullet detection algorithm.
-(There is a new direction parameter that indicates the direction of the surface vector of the extra bullet hole based on the attributes we have inserted. The code on the Info.cs script is in the Awake function, as we wish to run and get the new direction of our surface vector before we look for intersection from the SurfaceVector.cs attached on the primary bullet hole.
+If we have a second (extra) bullet hole, we have attached the *Info.cs* script, we similarly include azimuth angle, rotation and directionality  these information is extracted from the JSON file, after we have applied the bullet detection algorithm.
+(There is a new direction parameter that indicates the direction of the surface vector of the extra bullet hole based on the attributes we have inserted. The code on the *Info.cs* script is in the Awake function, as we wish to run and get the new direction of our surface vector before we look for intersection from the  *SurfaceVector.cs*  attached on the primary bullet hole.
 
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/25_inspector.jpg)
 
