@@ -18,10 +18,9 @@ public class SurfaceVector : MonoBehaviour
     [SerializeField] private Transform transformExtraBulletHole;
     public GameObject ConePrefab;
    // public GameObject Shooter;
-
     Vector3 intersection;
-
-
+    float threshold=1f;//increase this number to increase intersection threshold
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -102,7 +101,7 @@ public class SurfaceVector : MonoBehaviour
         float planarFactor = Vector3.Dot(lineVec3, crossVec1and2);
 
         //is coplanar, and not parallel
-        if (Mathf.Abs(planarFactor) < 0.5f
+        if (Mathf.Abs(planarFactor) < threshold 
                 && crossVec1and2.sqrMagnitude > 0.0001f)
         {
             float s = Vector3.Dot(crossVec3and2, crossVec1and2)
