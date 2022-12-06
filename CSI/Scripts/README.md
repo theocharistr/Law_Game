@@ -3,7 +3,7 @@
 The purpose of the forward scenario is to simulate the bullet trajectory in different position of the shooter. We attach the 
 *Bullet.cs* to an asset of a bullet we have created (a sphere with small dimensions,and gold color), inside the script we instantiate bullet holes on collision to other existing objects in the scene. The bullet hole object:
 
-![alt text](https://github.com/theocharistr/Law_Game/tree/main/CSI/Scripts/Forward%20Scenario). 
+![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/BulletHole.png). 
 
 We also have *ShootingR.cs* which using raycast visualizes the bullet trajectory, we attach this script to a Glock G22( a pistol asset we download from Unity assets)
 we add a sprite renderer and line renderer to the item.
