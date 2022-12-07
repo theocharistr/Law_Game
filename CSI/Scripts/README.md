@@ -1,7 +1,11 @@
  
 # Forward Scenario
 The purpose of the forward scenario is to simulate the bullet trajectory in different position of the shooter. We attach the 
-*Bullet.cs* to an asset of a bullet we have created (a sphere with small dimensions,and gold color), inside the script we instantiate bullet holes on collision to other existing objects in the scene. The bullet hole object:
+*Bullet.cs* to an asset of a bullet we have created (a sphere with small dimensions/scale,and gold color) and all the necessary modifications ( sphrere collider,collision detection-continuous) 
+
+![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/Bullet_Prefab.jpg)
+
+, inside the script we instantiate bullet holes on collision to other existing objects in the scene. The bullet hole object:
 
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/BulletHole.png). 
 
