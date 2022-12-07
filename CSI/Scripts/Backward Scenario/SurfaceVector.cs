@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,11 +16,14 @@ public class SurfaceVector : MonoBehaviour
     [SerializeField] float rotation = 0.0f;
     [SerializeField] private Directionality directionality;
     [SerializeField] private Transform transformExtraBulletHole;
+    [SerializeField] private Transform Cartridge;
+    [SerializeField] float threshold =1.0f;
     public GameObject ConePrefab;
    // public GameObject Shooter;
+
     Vector3 intersection;
-    float threshold=1f;//increase this number to increase intersection threshold
     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,12 +46,11 @@ public class SurfaceVector : MonoBehaviour
         Vector3 a2 = transform.position + direction * lineLength;
         Vector3 b1 = transformExtraBulletHole.position;
         Vector3 b2 = transformExtraBulletHole.position + Info.instance.new_direction* lineLength;
-        GameObject Cone = Instantiate(ConePrefab);
-
-
+        
         Debug.DrawLine(a1, a2, Color.yellow, 1000, false);
         Debug.DrawLine(b1, b2, Color.yellow, 1000, false);
-
+        
+        GameObject Cone = Instantiate(ConePrefab);
         Cone.transform.position = a1;
         Cone.transform.localScale = new Vector3(1f, 1f, lineLength);
         //Cone.transform.rotation = Quaternion.LookRotation(a2);
@@ -56,7 +58,6 @@ public class SurfaceVector : MonoBehaviour
         Cone.transform.rotation = Quaternion.LookRotation(-direction);
 
         Cone = Instantiate(ConePrefab);
-
         Cone.transform.position = b1;
         Cone.transform.localScale = new Vector3(1f, 1f, lineLength);
         Cone.transform.rotation = Quaternion.LookRotation(-Info.instance.new_direction);
@@ -65,7 +66,7 @@ public class SurfaceVector : MonoBehaviour
         //print("a1" + a1.ToString("F4") + "a2" + a2 + "b1" + b1 + "b2" + b2);
         Vector3 aDiff = a2 - a1;
         Vector3 bDiff = b2 - b1;
-        if (SurfaceVector.LineLineIntersection(out intersection, a1, aDiff, b1, bDiff))
+        if (SurfaceVector.LineLineIntersection(out intersection, a1, aDiff, b1, bDiff, threshold))
         {
             float aSqrMagnitude = aDiff.sqrMagnitude;
             float bSqrMagnitude = bDiff.sqrMagnitude;
@@ -77,11 +78,32 @@ public class SurfaceVector : MonoBehaviour
             {
                 // there is an intersection between the two segments and 
                 //   it is at intersection
-                print(intersection + "Intersection");
+                print(intersection + "Intersection point between the bullet hole's surface vectors");
                  
                 //GameObject ShooterPosition = Instantiate(Shooter, intersection, Quaternion.identity);
              }
-        } 
+        }
+        
+        
+        Vector3 c1=Cartridge.position;
+        Vector3 c2 = Cartridge.position + Cartridge.up * lineLength;
+        Debug.DrawLine(c1, c2, Color.green, 1000, false);
+        Vector3 cDiff = c2 - c1;
+        if (SurfaceVector.LineLineIntersection(out intersection, a1, aDiff, c1, cDiff, threshold))
+        {
+            float aSqrMagnitude = aDiff.sqrMagnitude;
+            float cSqrMagnitude = cDiff.sqrMagnitude;
+            //print("ee");
+            if ((intersection - a1).sqrMagnitude <= aSqrMagnitude
+                 && (intersection - a2).sqrMagnitude <= aSqrMagnitude
+                 && (intersection - c1).sqrMagnitude <= cSqrMagnitude
+                 && (intersection - c2).sqrMagnitude <= cSqrMagnitude)
+            {
+                // there is an intersection between the two segments and 
+                //   it is at intersection
+                print(intersection + "Intersection point between cartridges and the bullet hole surface vector ");
+            }
+        }
     }
 
     // Update is called once per frame
@@ -91,7 +113,7 @@ public class SurfaceVector : MonoBehaviour
     }
 
     public static bool LineLineIntersection(out Vector3 intersection, Vector3 linePoint1,
-        Vector3 lineVec1, Vector3 linePoint2, Vector3 lineVec2)
+        Vector3 lineVec1, Vector3 linePoint2, Vector3 lineVec2, float threshold)
     {
 
         Vector3 lineVec3 = linePoint2 - linePoint1;
@@ -101,7 +123,7 @@ public class SurfaceVector : MonoBehaviour
         float planarFactor = Vector3.Dot(lineVec3, crossVec1and2);
 
         //is coplanar, and not parallel
-        if (Mathf.Abs(planarFactor) < threshold 
+        if (Mathf.Abs(planarFactor) < threshold //increase this number to increase intersection threshold
                 && crossVec1and2.sqrMagnitude > 0.0001f)
         {
             float s = Vector3.Dot(crossVec3and2, crossVec1and2)
