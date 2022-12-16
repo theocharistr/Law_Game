@@ -12,7 +12,7 @@ Find Contours, find contours with  lenght size >5 ( requirement for ellipse),  k
 
 Check if the polygon convex created from the Json annotation file contains the center of ellipse and if the contour dectected< contour exist
 
-Check if the dimensions (width, lenght) are not zero save in Json file the ellipse detected number, width, lenght,rotation of ellipse, impact angle and azimuth 
+Check if the dimensions (width, length) are not zero save in Json file the ellipse detected number, width, lenght,rotation of ellipse, impact angle and azimuth 
 
 Crop the detected ellipse, apply threshold ,keep the contour with the bigger area and check if its center is left or right from the cropped ellipse
 
