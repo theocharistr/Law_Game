@@ -24,6 +24,16 @@ When we go in play mode, we can move the cursor around and see the possible traj
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/Csi.gif)
 
 For the implementation we followed the tutorial https://www.youtube.com/watch?v=6mJMmF5sLxk&t=472s&ab_channel=RomiFauzi, some of the major changes removed gravity from the bullet and changed the equation as we wish the trajectory to be a straight and not a curved line, based on LEA's decision.
+We used the equations of motion to determine the object's path over time by considering that the bullet goes in a straight line across the horizontal axis by removing any curve, gravity, or air resistance due to the limited space of the crime scene.
+
+
+Thus, the equations of motion are simplified to :
+
+Vxz= xz(t)/t ,  
+
+Vy= y(t)/t  instead of Vy=y(t)/t+ 12(g *t^2), since we remove the gravity factory.
+
+where xz(t) and y(t) are the distance traveled towards xz, y direction respectively.
 
 # Backward Scenario
 The purpose of the backward scenario is to locate the possible position of the shooter based on bullet hole image(s)and/or cartridges on the scene.
