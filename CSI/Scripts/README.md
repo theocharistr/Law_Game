@@ -68,3 +68,4 @@ If we have a second (extra) bullet hole, we have attached the *Info.cs* script, 
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/CrimeSceneCones_Cartridges.jpg)
 
 We can have more than one blender cone as input for different visualization and we can serialize the threshold parameter for intersection
+https://stackoverflow.com/questions/59449628/check-when-two-vector3-lines-intersect-unity3d Intersection code
