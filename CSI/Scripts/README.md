@@ -19,15 +19,17 @@ The ShootingR.cs script visualizes the bullet trajectory using raycasting. This 
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/ShootingR.cs__Inspector.jpg)
 
 
-Configuration
-Bullet: The bullet object with the Bullet.cs script attached.
-Cursor: The target showing the bullet hole position on shooting.
-Shoot Point: The transform position from which the gun shoots the bullet.
-Line Visual: The Line Renderer of the Glock G22.
-Line Segment: Set to 10.
-Flight Time: Set to 1.
-Bullet Hole Prefab: Set to the bullet hole object.
-Play Mode
+#### Configuration
+
+- **Bullet:** The bullet object with the `Bullet.cs` script attached.
+- **Cursor:** The target showing the bullet hole position on shooting.
+- **Shoot Point:** The transform position from which the gun shoots the bullet.
+- **Line Visual:** The Line Renderer of the Glock G22.
+- **Line Segment:** Set to 10.
+- **Flight Time:** Set to 1.
+- **Bullet Hole Prefab:** Set to the bullet hole object.
+
+#### Play Mode
 In play mode, moving the cursor shows the possible trajectory. Shooting visualizes the trajectory, and intersections of multiple trajectories indicate the shooter’s position.
 
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/Csi.gif)
@@ -37,7 +39,7 @@ We followed a tutorial (Romi Fauzi) with significant changes:
 
 Removed gravity from the bullet.
 Changed the trajectory equation to a straight line.
-# Equations of Motion
+#### Equations of Motion
 The simplified equations of motion, considering no gravity or air resistance, are:
 
 \[ V_{xz} = \frac{xz(t)}{t} \]
@@ -69,7 +71,7 @@ Azimuth Angle, Rotation, and Directionality: Extracted from the JSON file after 
 Other Bullet Hole Transform: Transform of the secondary bullet hole.
 Cone Visualization: A cone created in Blender for visualization.
 
-Play Mode
+#### Play Mode
 In play mode, the surface vectors of the bullet holes appear, indicating potential intersections. Enable Gizmos to view these in the scene.
 
 <img src="https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/CrimeScene.jpg" width="50%"/>
@@ -83,7 +85,7 @@ If we have a second (extra) bullet hole, we have attached the *Info.cs* script, 
 
 <img src="https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/Info.cs_Inspector.jpg" width="50%"/>
 
-Cartridges
+#### Cartridges
 If no extra bullet holes are present, input the cartridge transform to look for intersections,
 we include a serialized field where we input the transform of the cartridges and we look for intersection
  
@@ -91,12 +93,12 @@ we include a serialized field where we input the transform of the cartridges and
 
 We can have more than one blender cone as input for different visualization and we can serialize the threshold parameter for intersection
 
-Intersection Code
+#### Intersection Code
 The code checks for vector intersections using geometric analysis, as described in this Stack Overflow discussion.
 https://stackoverflow.com/questions/59449628/check-when-two-vector3-lines-intersect-unity3d Intersection code
 
 
-Virtual Analysis
+#### Virtual Analysis
 The process transfers real trajectory rods used by LEAs to the virtual analysis world, applying geometric analysis algorithms.
 
 <img src="https://github.com/user-attachments/assets/ec5dd8f4-69d3-4c48-9aeb-8f918b070ddf" width="50%"/>
