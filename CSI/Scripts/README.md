@@ -1,5 +1,5 @@
-**Law-Game Project: Bullet Trajectory Simulation and Shooter Position Detection **
-# Forward Scenario: Bullet Trajectory Simulation
+# Law-Game Project: Bullet Trajectory Simulation and Shooter Position Detection **
+## Forward Scenario: Bullet Trajectory Simulation
 The forward scenario simulates bullet trajectories from different shooter positions. We use a bullet asset, a sphere with small dimensions and gold color, which has a Sphere Collider and Collision Detection set to Continuous.
 
 Bullet Script
@@ -47,7 +47,7 @@ The simplified equations of motion, considering no gravity or air resistance, ar
 where \( xz(t) \) and \( y(t) \) are the distances traveled in the \( xz \) and \( y \) directions, respectively.
 
 
-# Backward Scenario: Shooter Position Detection
+## Backward Scenario: Shooter Position Detection
 The backward scenario aims to locate the possible shooter position based on bullet hole images and/or cartridges in the scene.
 
 Ground Truth Images
