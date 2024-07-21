@@ -1,29 +1,62 @@
-# Bullet-hole-Detection
-BulletDetection1image/Detectortest.py use it while having as input one image and the JSON file for the mask of the bullethole
-BulletDetection1image/DetectortestwithouJSON.py use it while having as input one image and without JSON file for the mask of the bullethole
-BulletDetectionAllimages/DetectortestAll.py uses it while having all images and all their respective JSON files
+# Bullet hole Detection
+
+**BulletDetection1image/Detectortest.py** processes a single image and requires an accompanying JSON file that contains the mask for the bullet hole.
+
+**BulletDetection1image/DetectortestwithoutJSON.py** processes a single image but does not require a JSON file for the mask of the bullet hole.
+
+**BulletDetectionAllimages/DetectortestAll.py** processes all images in the directory, utilizing their respective JSON files to detect bullet holes.
+
+
 
 ![alt text]( https://github.com/theocharistr/Bullet-hole-Detection/blob/master/BulletDetection1image/bullet%20hole%20car%20198.png)
 
 
-Preprocess the image, Convert to gray, blur, (apply threshold if needed), canny, dilate, and finally erosion
+Here is a formal description of the image processing and contour analysis procedure:
 
-Find Contours, find contours with  length size >5 (a requirement for the ellipse),  and keep only the child contours (and not the parent contour, meaning external)
+---
 
-Check if the polygon convex created from the Json annotation file contains the center of the ellipse and if the contour dectected< contour exists
+1. **Preprocess the Image:**
+   - Convert the image to grayscale.
+   - Apply a blur to reduce noise.
+   - If necessary, apply a threshold to segment the image.
+   - Use Canny edge detection to identify edges.
+   - Perform dilation to enhance the edges.
+   - Apply erosion to reduce noise and refine the contours.
 
-Check if the dimensions (width, length) are not zero save in JSON file the ellipse detected number, width, length, rotation of ellipse, impact angle, and azimuth 
+2. **Find Contours:**
+   - Detect contours in the image.
+   - Filter contours to keep only those with a length greater than 5, which is required for ellipse fitting.
+   - Retain only child contours, excluding parent (external) contours.
 
-Crop the detected ellipse, apply threshold, and Closing (dilation followed by erosion is typically used to close small gaps and holes within the background of a binary image).
+3. **Ellipse and Polygon Check:**
+   - Check if the ellipse, created from the detected contours, is contained within the polygon defined by the JSON annotation file.
+   - Verify that the contour exists and is valid.
 
-Keep the contour with the bigger area and check if its center is left or right from the cropped ellipse
+4. **Ellipse Dimensions Validation:**
+   - Ensure that the dimensions (width and length) of the ellipse are not zero.
+   - Save the following details in the JSON file: ellipse number, width, length, rotation, impact angle, and azimuth.
 
-This way we define the directionality of the bullet which we save in JSON file
+5. **Crop and Process Detected Ellipse:**
+   - Crop the area containing the detected ellipse.
+   - Apply a threshold to the cropped image.
+   - Perform a closing operation (dilation followed by erosion) to close small gaps and holes in the binary image.
+
+6. **Contour Area Analysis:**
+   - Identify and retain the contour with the largest area.
+   - Determine if the center of this contour is located to the left or right of the cropped ellipse.
+
+7. **Define Bullet Directionality:**
+   - Based on the position of the largest contour relative to the cropped ellipse, define the directionality of the bullet.
+   - Save the directionality information in the JSON file.
+
+---
 
 ![alt text](https://github.com/theocharistr/Bullet-hole-Detection/blob/master/BulletDetectionAllimages/directionality.jpg)
 
-Thus we have the azimuth angle and we define the elevation angle based on the rotation and the directionality of the bullet, and we can create a surface vector to locate the potential position of the shooter 
+Based on the detected ellipse, we calculate the azimuth angle directly from the provided data. 
+Additionally, the elevation angle is determined using the rotation and directionality of the bullet.
 
+With these angles established, we can construct a surface vector to estimate the potential position of the shooter.
 ![alt text](https://github.com/theocharistr/Bullet-hole-Detection/blob/master/BulletDetection1image/Detected_bullet%20hole%20car%20198.jpg)
 
 Two more examples for
@@ -36,4 +69,6 @@ Two more examples for
 
 ![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Bullet-hole-Detection/BulletDetection1image/Detected_65.jpg)
 
-If we have more than one bullet hole, they are saved as a list in the JSON file, with their corresponding contour detection.
+When multiple bullet holes are detected, each bullet hole is saved as an entry in a list within the JSON file,
+along with its corresponding contour detection data.
+
