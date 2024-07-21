@@ -72,22 +72,22 @@ Cone Visualization: A cone created in Blender for visualization.
 Play Mode
 In play mode, the surface vectors of the bullet holes appear, indicating potential intersections. Enable Gizmos to view these in the scene.
 
-![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/CrimeScene.jpg)
+<img src="https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/CrimeScene.jpg" width="50%"/>
 
 Replace vectors with cones to add uncertainty, defined by a threshold parameter.
 
-![alt text]( https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/CrimeSceneCones.jpg)
+<img src="https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/CrimeSceneCones.jpg" width="50%"/>
 
 If we have a second (extra) bullet hole, we have attached the *Info.cs* script, we similarly include azimuth angle, rotation and directionality  these information is extracted from the JSON file, after we have applied the bullet detection algorithm.
 (There is a new direction parameter that indicates the direction of the surface vector of the extra bullet hole based on the attributes we have inserted. The code on the *Info.cs* script is in the Awake function, as we wish to run and get the new direction of our surface vector before we look for intersection from the  *SurfaceVector.cs*  attached on the primary bullet hole. The *Info.cs* script looks like :
 
-![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/Info.cs_Inspector.jpg)
+<img src="https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/Info.cs_Inspector.jpg" width="50%"/>
 
 Cartridges
 If no extra bullet holes are present, input the cartridge transform to look for intersections,
 we include a serialized field where we input the transform of the cartridges and we look for intersection
  
-![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/CrimeSceneCones_Cartridges.jpg)
+<img src="https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/CrimeSceneCones_Cartridges.jpg" width="50%"/>
 
 We can have more than one blender cone as input for different visualization and we can serialize the threshold parameter for intersection
 
@@ -98,6 +98,9 @@ https://stackoverflow.com/questions/59449628/check-when-two-vector3-lines-inters
 
 Virtual Analysis
 The process transfers real trajectory rods used by LEAs to the virtual analysis world, applying geometric analysis algorithms.
-![image](https://github.com/user-attachments/assets/ec5dd8f4-69d3-4c48-9aeb-8f918b070ddf)
+
+<img src="https://github.com/user-attachments/assets/ec5dd8f4-69d3-4c48-9aeb-8f918b070ddf" width="50%"/>
+
+
 This implementation allows us to accurately simulate bullet trajectories and deduce shooter positions in a crime scene.
 
