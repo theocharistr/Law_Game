@@ -6,7 +6,7 @@ Bullet Script
 The Bullet.cs script is attached to the bullet asset. On collision with other objects in the scene, the script instantiates bullet holes. The bullet hole object appears as follows:
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/Bullet_Prefab.jpg)
 
-, inside the script we instantiate bullet holes on collision to other existing objects in the scene. The bullet hole object:
+Inside the script we instantiate bullet holes on collision to other existing objects in the scene. The bullet hole object:
 
 <img src="https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/BulletHole.png" width="40%"/>
 
