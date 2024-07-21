@@ -1,4 +1,4 @@
-# Law-Game Project: Bullet Trajectory Simulation and Shooter Position Detection **
+# Law-Game Project: Bullet Trajectory Simulation and Shooter Position Detection 
 ## Forward Scenario: Bullet Trajectory Simulation
 The forward scenario simulates bullet trajectories from different shooter positions. We use a bullet asset, a sphere with small dimensions and gold color, which has a Sphere Collider and Collision Detection set to Continuous.
 
