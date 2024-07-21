@@ -1,6 +1,6 @@
 # Bullet hole Detection
 
-**BulletDetection1image/Detectortest.py** processes a single image and requires an accompanying JSON file that contains the mask for the bullet hole.
+**BulletDetection1image/Detectortest.py** processes a lone image and requires an accompanying JSON file that contains the mask for the bullet hole.
 
 **BulletDetection1image/DetectortestwithoutJSON.py** processes a single image but does not require a JSON file for the mask of the bullet hole.
 
