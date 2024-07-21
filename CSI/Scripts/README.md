@@ -35,18 +35,15 @@ In play mode, moving the cursor shows the possible trajectory. Shooting visualiz
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/Csi.gif)
 
 Modifications
-We followed a tutorial (Romi Fauzi) with significant changes:
+We followed a Trajectory Visualization tutorial (https://www.youtube.com/watch?v=6mJMmF5sLxk&ab_channel=RomiFauzi Romi Fauzi) with significant changes:
+Removed gravity from the bullet. Changed the trajectory equation to a straight line.
 
-Removed gravity from the bullet.
-Changed the trajectory equation to a straight line.
 #### Equations of Motion
 The simplified equations of motion, considering no gravity or air resistance, are:
 
 - `V_xz = xz(t) / t`
 - `V_y = y(t) / t`
-
 where \( xz(t) \) and \( y(t) \) are the distances traveled in the \( xz \) and \( y \) directions, respectively.
-
 
 ## Backward Scenario: Shooter Position Detection
 The backward scenario aims to locate the possible shooter position based on bullet hole images and/or cartridges in the scene.
@@ -62,7 +59,7 @@ Ground Truth Images
 
 These images are imported as 2D sprites in Unity assets and placed in the crime scene.
 
- We set the *SurfaceVector.cs* script on our **primary** bullethole object, **meaning the one bullet hole that will definitely exist on our scene** and the *Info.cs* in case we have an Extra bullet hole in the scene. On the inspector for the primary bullet, the following information will be required after we attach the *SurfaceVector.cs* script to the object
+We attach the SurfaceVector.cs script to the primary bullet hole object, which is the bullet hole guaranteed to be in the scene. For any additional bullet holes, we use the Info.cs script. After attaching the SurfaceVector.cs script, configure the following details in the Inspector for the primary bullet hole:
 
 ![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/SurfaceVector.cs__Inspector.jpg)
 
@@ -79,8 +76,11 @@ Replace vectors with cones to add uncertainty, defined by a threshold parameter.
 
 <img src="https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/CrimeSceneCones.jpg" width="50%"/>
 
-If we have a second (extra) bullet hole, we have attached the *Info.cs* script, we similarly include azimuth angle, rotation and directionality  these information is extracted from the JSON file, after we have applied the bullet detection algorithm.
-(There is a new direction parameter that indicates the direction of the surface vector of the extra bullet hole based on the attributes we have inserted. The code on the *Info.cs* script is in the Awake function, as we wish to run and get the new direction of our surface vector before we look for intersection from the  *SurfaceVector.cs*  attached on the primary bullet hole. The *Info.cs* script looks like :
+For a second (extra) bullet hole, attach the Info.cs script and configure the azimuth angle, rotation, and directionality, which are extracted from the JSON file after applying the bullet detection algorithm.
+
+The Info.cs script includes a new direction parameter that specifies the surface vector direction of the extra bullet hole. This script's Awake function initializes the direction before checking intersections with the SurfaceVector.cs script on the primary bullet hole.
+
+The Info.cs script configuration is as follows:
 
 <img src="https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Backward%20Scenario/Info.cs_Inspector.jpg" width="50%"/>
 
@@ -98,10 +98,9 @@ https://stackoverflow.com/questions/59449628/check-when-two-vector3-lines-inters
 
 
 #### Virtual Analysis
-The process transfers real trajectory rods used by LEAs to the virtual analysis world, applying geometric analysis algorithms.
+The process transfers real trajectory rods used by Law Enforcement Agencies to the virtual analysis world, applying AI & geometric analysis algorithms.
 
 <img src="https://github.com/user-attachments/assets/ec5dd8f4-69d3-4c48-9aeb-8f918b070ddf" width="50%"/>
-
 
 This implementation allows us to accurately simulate bullet trajectories and deduce shooter positions in a crime scene.
 
