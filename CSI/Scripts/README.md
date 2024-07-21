@@ -42,9 +42,8 @@ Changed the trajectory equation to a straight line.
 #### Equations of Motion
 The simplified equations of motion, considering no gravity or air resistance, are:
 
-\[ V_{xz} = \frac{xz(t)}{t} \]
-
-\[ V_y = \frac{y(t)}{t} \]
+- `V_xz = xz(t) / t`
+- `V_y = y(t) / t`
 
 where \( xz(t) \) and \( y(t) \) are the distances traveled in the \( xz \) and \( y \) directions, respectively.
 
