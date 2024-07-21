@@ -8,7 +8,7 @@ The Bullet.cs script is attached to the bullet asset. On collision with other ob
 
 , inside the script we instantiate bullet holes on collision to other existing objects in the scene. The bullet hole object:
 
-![alt text](https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/BulletHole.png). 
+<img src="https://github.com/theocharistr/Law_Game/blob/main/CSI/Scripts/Forward%20Scenario/BulletHole.png" width="50%"/>
 
 Shooting Script
 The ShootingR.cs script visualizes the bullet trajectory using raycasting. This script is attached to a Glock G22 pistol asset, which includes a Sprite Renderer and a Line Renderer.
